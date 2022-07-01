@@ -1,0 +1,73 @@
+:root {
+  --primary-green: #007172;
+  --primary-red: #D94F04;
+  --secondary-yellow: #FDFCDC;
+  --secondary-green:#CBDAD5;
+  --secondary-red:#FFE1DD;
+}
+
+
+/* Page wrapper allows footer & nav divs to sit on top of the page. */
+.connect-page-wrapper {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.footer-div {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+
+
+
+.connect-main-container {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.red-wrapper {
+  background-color: var(--secondary-red);
+  height: 100%;
+  width: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.green-wrapper {
+  background-color: var(--secondary-yellow);
+  height: 100%;
+  width: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-column-div {
+  width: 50%;
+  text-align: center;
+}
+
+
+.right-column-div {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--secondary-yellow);
+}
+
+
+.right-column-div img {
+  width: 6rem;
+  margin: auto;
+  padding-top: 2rem;
+}

@@ -1,0 +1,181 @@
+:root {
+  --primary-green: #007172;
+  --primary-red: #D94F04;
+  --secondary-yellow: #FDFCDC;
+  --secondary-green:#CBDAD5;
+  --secondary-red:#FFE1DD;
+}
+
+/* HERO SECTION GLOBAL */
+
+.projects-hero-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+  align-items: center;
+  padding-top: 3.5rem;
+}
+
+
+/* HERO SECTION LEFT COLUMN */
+
+.projects-hero-column-left {
+  padding-left: 4rem;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: flex-start;
+  row-gap: .25rem;
+  width: 90%;
+}
+
+.projects-hero-column-left a {
+  padding-top: 2rem;
+}
+
+#project-page-down-trigger {
+  cursor: pointer;
+}
+
+
+
+/* HERO SECTION RIGHT COLUMN */
+
+.projects-hero-column-right {
+  background-color: var(--secondary-green);
+  padding-right: 4rem;
+  padding-left: 4rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  justify-content: center;
+  height: 100%;
+}
+
+.projects-hero-column-right h3 {
+  color: var(--primary-red);
+}
+
+.projects-hero-column-right ol {
+  line-height: 1.5rem;
+  font-size: .9rem;
+}
+
+.tech-stack-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 3rem;
+}
+
+
+
+/* PROJECT SECTION GLOBAL */
+
+.project-card-hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: .5rem;
+}
+
+.project-card-hero img {
+   width: 75%;
+   padding-top: 1rem;
+}
+
+.project-card-info {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+
+
+.project-overview p {
+  padding-bottom: .5rem;
+}
+
+
+.project-tech-stack button {
+  margin: auto;
+}
+
+
+/* RED CARD SPECIFIC */
+
+.project-section-red {
+  padding: 2rem 0rem;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  width: 80%;
+  margin: auto;
+}
+
+.project-section-red .project-card-hero  {
+  border: 2px solid var(--primary-red);
+  border-radius: .5rem;
+
+  padding: 3rem;
+} 
+
+.project-section-red .project-card-info  {
+  background-color: var(--secondary-red);
+  border-radius: .5rem;
+  padding: 3rem;
+} 
+
+
+
+/* GREEN CARD SPECIFIC */
+.project-section-green {
+  padding: 4rem 0rem;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  width: 80%;
+  margin: auto;
+}
+
+.project-section-green .project-card-hero  {
+  border: 2px solid var(--primary-green);
+  border-radius: .5rem;
+  padding: 3rem;
+} 
+
+.project-section-green .project-card-info  {
+  background-color: var(--secondary-green);
+  border-radius: .5rem;
+  padding: 3rem;
+} 
+
+
+.bottom-project {
+  padding-bottom: 12rem;
+}
+
+
+
+/* SCROLL UP TRIGGER STYLE */
+.back-to-top-div {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+
+  padding: 3rem 0rem 9rem 0rem;
+
+}
+
+.back-to-top-div a {
+  cursor: pointer;
+}
+
+.back-to-top-div img {
+  width: 4rem;
+}
+
+
+
+
+

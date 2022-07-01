@@ -1,0 +1,55 @@
+:root {
+  --primary-green: #007172;
+  --primary-red: #D94F04;
+  --secondary-yellow: #FDFCDC;
+  --secondary-green:#CBDAD5;
+  --secondary-red:#FFE1DD;
+}
+
+.page-container {
+  position: relative;
+}
+
+.footer-div {
+  bottom: 0;
+  background-color: var(--primary-green);
+  height: 6rem;
+  width: 100%;
+  margin-top: 2rem;
+  position: absolute;
+}
+
+.connect-content {
+  width: 50%;
+  height: 100%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  justify-content: center;
+  align-items: center;
+}
+
+.connect-content h2 {
+  color: var(--secondary-yellow);
+  margin: auto;
+}
+
+.connect-content p {
+  color: var(--secondary-yellow);
+  margin: auto;
+}
+
+.connect-content a {
+  color: var(--secondary-yellow);
+  font-weight: 700;
+}
+
+.connect-content a:hover {
+  color: var(--secondary-green);
+}
+
+.connect-content .about-me-image {
+  max-width: 4rem;
+  height: auto;
+  margin: auto;
+}
