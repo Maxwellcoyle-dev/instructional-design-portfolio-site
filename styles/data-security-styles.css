@@ -50,7 +50,7 @@
 .landing-hero-image-div {
  width: 100%;
  height: 12rem;
- background-image: url('../images/data-security-hero-img.png');
+ background-image: url("https://github.com/Maxwellcoyle-dev/portfolio-site.git/images/data-security-hero.png");
  background-size: contain;
 }
 
