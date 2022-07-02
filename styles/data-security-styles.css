@@ -50,7 +50,7 @@
 .landing-hero-image-div {
  width: 100%;
  height: 12rem;
- background-image: url('/data-security-101/data-security-images/data-security-home-page-images/data-security-hero-img.png');
+ background-image: url('/images/data-security-hero-img.png');
  background-size: contain;
 }
 

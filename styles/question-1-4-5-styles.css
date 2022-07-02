@@ -64,14 +64,6 @@ button:hover {
   background-color: var(--primary-green);
 }
 
-.red-text {
-  color: var(--primary-red);
-}
-
-.green-text {
-  color: var(--primary-green);
-}
-
 /* Question Page styles */
 
 .question-main-container {
