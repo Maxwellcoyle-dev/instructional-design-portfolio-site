@@ -185,6 +185,12 @@ button:hover {
   column-gap: 1rem;
 }
 
+.sticky-next-button {
+  position: fixed;
+  bottom: 12rem;
+  right: 2rem;
+}
+
 .results-r1-c1-3 {
   grid-column: 1 / span 3;
   grid-row: 1/2;

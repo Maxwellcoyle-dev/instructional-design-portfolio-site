@@ -17,6 +17,8 @@ let userChoice;
 
 
 let organizedUserResultData = [];
+let validScores = [];
+
 
 /* GET RESPONSE DATA */ 
 async function get_statements() {
@@ -42,14 +44,13 @@ async function get_statements() {
     if (statement.actor.name !== currentUserName) {
       currentUserName = statement.actor.name;
       let currentUserData = qData.filter(statement => statement.actor.name === currentUserName);
-  
-      // console.log(currentUserData);
 
       for (let i = 0; i < currentUserData.length; i++) {
         userResults.push(currentUserData[i].result);
       }
 
       userResults.forEach(userResults => {
+
         if (userResults.response === 'question-5-C') {
           userScore += 4;
         } else if (userResults.response === 'question-5-B') {
@@ -104,7 +105,7 @@ async function get_statements() {
       organizedUserResultData.push(newUser);
 
       // console.log(newUser);
-    }
+    } 
 
   })
 
@@ -116,19 +117,80 @@ async function get_statements() {
     }
   }) 
 
-  console.log(organizedUserResultData);
+  // console.log(organizedUserResultData);
+
+
+  for (let i = 0; i < organizedUserResultData.length; i++) {
+    if (organizedUserResultData[i].score < 20) {
+      validScores.push(organizedUserResultData[i])
+    }
+  }
+
+  console.log(validScores);
+
+  let topTenScores = validScores.map(x => x.score);
+  let topTenUsers = validScores.map(x => x.userName);
+
+  
+
+
+  console.log(topTenScores);
+  console.log(topTenUsers);
+
+
+  const data = {
+    labels: topTenUsers,
+    datasets: [{
+      backgroundColor: '#007172',
+      borderColor: 'rgb(255, 99, 132)',
+      data: topTenScores,
+    }]
+  };
+
+  // leaderboardChart.defaults.global.defaultFontFamily = "'Poppins', sans-serif";
+
+  const leaderboardCanvas = await document.getElementById('leaderboard-top-ten').getContext('2d');
+  const leaderboardChart = await new Chart(leaderboardCanvas, {
+    type: 'bar',
+    data: data,
+    options: {
+      indexAxis: 'y',
+      plugins: {
+        legend: {
+          display: false,
+        },
+      },
+      scales: {
+        y: {
+          ticks: {
+            color: 'black',
+            font: {
+              family: "'Poppins', sans-serif",
+              size: 15
+            }
+          },
+          beginAtZero: false
+        }
+      },
+    }
+  });
+
+
 
   for (let i = 0; i < 10; i++) {
     const topTenList = document.getElementById('top-ten-list');
-    const firstName = organizedUserResultData[i].userName;
-    const score = organizedUserResultData[i].score;
+    const firstName = validScores[i].userName;
+    const score = validScores[i].score;
     const entry = document.createElement('li');
     entry.appendChild(document.createTextNode(`${firstName}: ${score}/20`));
     topTenList.appendChild(entry);
-  }
+  } 
+
 }
 
 
 
 /* Event listener to retrieve statements from the LRS */
 window.addEventListener('load', get_statements);
+
+

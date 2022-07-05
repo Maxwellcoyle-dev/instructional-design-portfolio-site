@@ -2,6 +2,8 @@
 const getStatements = document.getElementById('get-statements');
 let userName = localStorage.getItem('user');
 
+let yourScore = document.getElementById('your-score');
+
 
 var conf = {
   "endpoint" : "https://xapi-practica.lrs.io/xapi/",
@@ -28,6 +30,12 @@ let groupNames = [];
 
 let qStatements = [];
 
+
+let tip1 = document.getElementById('tip-1');
+let tip2 = document.getElementById('tip-2');
+let tip3 = document.getElementById('tip-3');
+
+
 async function get_statements() {
 
   const quizParams1 = ADL.XAPIWrapper.searchParams();
@@ -37,7 +45,7 @@ async function get_statements() {
 
 
   const qQueryData = await ADL.XAPIWrapper.getStatements(quizParams1);
-  console.log(qQueryData);
+  // console.log(qQueryData);
 
 
   qStatements = await qQueryData.statements;
@@ -55,8 +63,8 @@ async function get_statements() {
   })
 
 
-  console.log(groupResponses);
-  console.log(groupNames);
+  // console.log(groupResponses);
+  // console.log(groupNames);
   
 
   let q1GroupTotalRisk = 0;
@@ -156,11 +164,11 @@ async function get_statements() {
   q5Average = q5GroupTotalRisk / q5NumOfResponses;
   q5Average = q5Average.toFixed(2);
 
-  console.log(q1Average);
-  console.log(q2Average);
-  console.log(q3Average);
-  console.log(q4Average);
-  console.log(q5Average);
+  // console.log(q1Average);
+  // console.log(q2Average);
+  // console.log(q3Average);
+  // console.log(q4Average);
+  // console.log(q5Average);
 
 
 
@@ -175,12 +183,12 @@ async function get_statements() {
   })
 
 
-  console.log(groupResponses);
+  // console.log(groupResponses);
 
 
 
 
-  let totalUserRisk = 0;
+
 
   userResponses.forEach(response => {
     if (response === 'question-1-A') {
@@ -230,11 +238,27 @@ async function get_statements() {
   });
 
 
-  console.log(q1UserRisk);
-  console.log(q2UserRisk);
-  console.log(q3UserRisk);
-  console.log(q4UserRisk);
-  console.log(q5UserRisk);
+  let totalUserScore = q1UserRisk + q2UserRisk + q3UserRisk + q4UserRisk + q5UserRisk;
+
+  if (totalUserScore > 15) {
+    yourScore.innerHTML = totalUserScore;
+    yourScore.style.color = '#007172';
+  } else if (totalUserScore > 10) {
+    yourScore.innerHTML = totalUserScore;
+    yourScore.style.color = '#FFE1DD';
+  } else {
+    yourScore.innerHTML = totalUserScore;
+    yourScore.style.color = '#D94F04';
+  }
+
+
+
+
+  // console.log(q1UserRisk);
+  // console.log(q2UserRisk);
+  // console.log(q3UserRisk);
+  // console.log(q4UserRisk);
+  // console.log(q5UserRisk);
 
 
 
@@ -269,68 +293,68 @@ async function get_statements() {
   };
 
 
-const chart = document.getElementById('myChart').getContext('2d');
-const myChart = new Chart(chart, {
-    type: 'line',
-    data: data,
-    options: {
-      scales: {
-        y: {
-          ticks: {
-            color: '#D94F04',
-            font: {
-              weight: 'bold',
-              family: "'Poppins', sans-serif"
+  const chart = document.getElementById('myChart').getContext('2d');
+  const myChart = new Chart(chart, {
+      type: 'line',
+      data: data,
+      options: {
+        scales: {
+          y: {
+            ticks: {
+              color: '#D94F04',
+              font: {
+                weight: 'bold',
+                family: "'Poppins', sans-serif"
+              }
+            }
+          },
+          x: {
+            ticks: {
+              color: '#007172',
+              font: {
+                weight: 'bold',
+                family: "'Poppins', sans-serif"
+              },
             }
           }
         },
-        x: {
-          ticks: {
-            color: '#007172',
+        responsive: true,
+        offset: true,
+        plugins: {
+          title: {
+            display: true,
+            position: 'top',
+            align: 'left',
+            padding: 20,
+            fullSize: false,
+            text: "See where you're vulnerable.",
+            color: '#D94F04',
             font: {
-              weight: 'bold',
-              family: "'Poppins', sans-serif"
-            },
-          }
-        }
-      },
-      responsive: true,
-      offset: true,
-      plugins: {
-        title: {
-          display: true,
-          position: 'top',
-          align: 'left',
-          padding: 20,
-          fullSize: false,
-          text: "See where you're vulnerable.",
-          color: '#D94F04',
-          font: {
-            size: 20,
-            family: "'Poppins', sans-serif",
-          }
-        },
-        legend: {
-          display: true,
-          position: 'left',
+              size: 20,
+              family: "'Poppins', sans-serif",
+            }
+          },
+          legend: {
+            display: true,
+            position: 'left',
+            labels: {
+              font: {
+                size: 14,
+                family: "'Poppins', sans-serif"
+              },
+              position: 'bottom'
+            }
+          },
           labels: {
             font: {
-              size: 14,
-              family: "'Poppins', sans-serif"
-            },
-            position: 'bottom'
-          }
-        },
-        labels: {
-          font: {
-            size: 20,
-            family: "'Poppins', sans-serif",
-            weight: 'bold'
+              size: 20,
+              family: "'Poppins', sans-serif",
+              weight: 'bold'
+            }
           }
         }
       }
-    }
-});
+  });
 
 
 };
@@ -367,26 +391,26 @@ async function determineUserScore() {
 
 
   let userResponseNumbers = [q1UserRisk, q2UserRisk, q3UserRisk, q4UserRisk, q5UserRisk];
-  console.log(userResponseNumbers);
+  // console.log(userResponseNumbers);
 
   let userFinalRiskScore = userResponseNumbers.reduce((partialSum, a) => partialSum + a, 0);
-  console.log(userFinalRiskScore);
+  // console.log(userFinalRiskScore);
 
 
   if (userFinalRiskScore >= 15) {
     userRiskHigh = true;
     highRiskCardView.style.display = 'block';
-    console.log(userRiskHigh);
+    // console.log(userRiskHigh);
 
   } else if (userFinalRiskScore >= 10) {
     userRiskMedium = true;
     medRiskCardView.style.display = 'block';
-    console.log(userRiskMedium);
+    // console.log(userRiskMedium);
 
   } else {
     userRiskLow = true;
     lowRiskCardView.style.display = 'block'
-    console.log(userRiskLow);
+    // console.log(userRiskLow);
   }
 
 
@@ -397,7 +421,7 @@ async function determineUserScore() {
   let weaknessContent = document.getElementById('weakness-content');
 
 
-  console.log(userResponseNumbers);
+  // console.log(userResponseNumbers);
 
 
  
@@ -409,35 +433,36 @@ async function determineUserScore() {
     for (let i = 1; i < a.length; i++) {
       if (a[i] < a[lowest]) lowest = i;
     }
-    console.log(lowest);
+    // console.log(lowest);
     return lowest;
   }
 
-  console.log(lowest);
+  // console.log(lowest);
   indexOfMin(userResponseNumbers);
 
 
   if (lowest === 0) {
-    console.log(lowest);
+    // console.log(lowest);
     strengthTitle.innerHTML = 'Password Management';
-    strengthContent.innerHTML = 'Password Management - A high risk score means that you are an easy target for data attacks. Don’t fret! You’ve made it this far which means that you’ve already learned a few tricks to better protect your personal data online.'
-    console.log('Strength: Password Management');
+    strengthContent.innerHTML = 'Password Management - A high risk score means that you are an easy target for data attacks. Don’t fret! You’ve made it this far which means that you’ve already learned a few tricks to better protect your personal data online.';
+    // console.log('Strength: Password Management');
   } else if (lowest === 1) {
     strengthTitle.innerHTML = 'Phishing Attacks';
-    strengthContent.innerHTML = 'Phishing Attacks - A high risk score means that you are an easy target for data attacks. Don’t fret! You’ve made it this far which means that you’ve already learned a few tricks to better protect your personal data online.'
-    console.log('Strength: Phishing Attcks');
+    strengthContent.innerHTML = 'Phishing Attacks - A high risk score means that you are an easy target for data attacks. Don’t fret! You’ve made it this far which means that you’ve already learned a few tricks to better protect your personal data online.';
+    // console.log('Strength: Phishing Attcks');
   } else if (lowest === 2) {
     strengthTitle.innerHTML = 'Email Security';
-    strengthContent.innerHTML = 'Email Security - A high risk score means that you are an easy target for data attacks. Don’t fret! You’ve made it this far which means that you’ve already learned a few tricks to better protect your personal data online.'
-    console.log('Strength: Email Security');
+    strengthContent.innerHTML = 'Email Security - A high risk score means that you are an easy target for data attacks. Don’t fret! You’ve made it this far which means that you’ve already learned a few tricks to better protect your personal data online.';
+    // console.log('Strength: Email Security');
   } else if (lowest === 3) {
     strengthTitle.innerHTML = 'Software Exposure';
-    strengthContent.innerHTML = 'Software Exposure - A high risk score means that you are an easy target for data attacks. Don’t fret! You’ve made it this far which means that you’ve already learned a few tricks to better protect your personal data online.'
-    console.log('Strength: Software Exposure');
+    strengthContent.innerHTML = 'Software Exposure - A high risk score means that you are an easy target for data attacks. Don’t fret! You’ve made it this far which means that you’ve already learned a few tricks to better protect your personal data online.';
+    // console.log('Strength: Software Exposure');
   } else if (lowest === 4) {
     strengthTitle.innerHTML = 'Data Breach Monitoring';
-    strengthContent.innerHTML = 'Data Breach Monitoring - A high risk score means that you are an easy target for data attacks. Don’t fret! You’ve made it this far which means that you’ve already learned a few tricks to better protect your personal data online.'
-    console.log('Strength: Data Breach Monitoring');
+    strengthContent.innerHTML = 'Data Breach Monitoring - A high risk score means that you are an easy target for data attacks. Don’t fret! You’ve made it this far which means that you’ve already learned a few tricks to better protect your personal data online.';
+
+    // console.log('Strength: Data Breach Monitoring');
   }
 
 
@@ -450,11 +475,11 @@ async function determineUserScore() {
     for (let i = 1; i < a.length; i++) {
       if (a[i] > a[highest]) highest = i;
     }
-    console.log(highest);
+    // console.log(highest);
     return highest;
   }
 
-  console.log(highest);
+  // console.log(highest);
   indexOfMax(userResponseNumbers);
 
 
@@ -462,23 +487,33 @@ async function determineUserScore() {
   if (highest === 0) {
     weaknessTitle.innerHTML = 'Password Management';
     weaknessContent.innerHTML = 'Password Management - A high risk score means that you are an easy target for data attacks. Don’t fret! You’ve made it this far which means that you’ve already learned a few tricks to better protect your personal data online.'
-    console.log('Weakness: Password Management');
+    tip1.innerHTML = '1. Use a password manager. Check out <a target="_blank" href="https://passwords.google.com/">Google’s password manager here.</a>';
+    tip2.innerHTML = '2. Make sure that important accounts, like online banking accounts, each have a unique and complex password.';
+    tip3.innerHTML = '3. Use 2-step verification. Check out <a target="_blank" href="https://www.microsoft.com/en-us/security/mobile-authenticator-app">Microsoft Authenticator app here.';
   } else if (highest === 1) {
     weaknessTitle.innerHTML = 'Phishing Attacks';
     weaknessContent.innerHTML = 'Phishing Attacks - A high risk score means that you are an easy target for data attacks. Don’t fret! You’ve made it this far which means that you’ve already learned a few tricks to better protect your personal data online.'
-    console.log('Weakness: Phishing Attcks');
+    tip1.innerHTML = '1. Don’t click on attachments or links that arrive in your email inbox. ';
+    tip2.innerHTML = '2. Never trust any email or phone call that is requesting sensitive information. ';
+    tip3.innerHTML = '3. Be especially aware of emails with urgent subject lines.  ';
   } else if (highest === 2) {
     weaknessTitle.innerHTML = 'Email Security';
     weaknessContent.innerHTML = 'Email Security - A high risk score means that you are an easy target for data attacks. Don’t fret! You’ve made it this far which means that you’ve already learned a few tricks to better protect your personal data online.'
-    console.log('Weakness: Email Security');
+    tip1.innerHTML = '1. Keep an eye out for emails with grammar, spelling, or formatting mistakes.';
+    tip2.innerHTML = '2. Be aware of any email coming from an unfamiliar address or that has an unusual greeting or subject line.';
+    tip3.innerHTML = '3. Delete any email requesting account credentials, payment information, or sensitive data.';
   } else if (highest === 3) {
     weaknessTitle.innerHTML = 'Software Exposure';
-    weaknessContent.innerHTML = 'Software Exposure - A high risk score means that you are an easy target for data attacks. Don’t fret! You’ve made it this far which means that you’ve already learned a few tricks to better protect your personal data online.'
-    console.log('Weakness: Software Exposure');
+    weaknessContent.innerHTML = 'Software Exposure - A high risk score means that you are an easy target for data attacks. Don’t fret! You’ve made it this far which means that you’ve already learned a few tricks to better protect your personal data online.';
+    tip1.innerHTML = '1. Turn on automatic software updates in your system settings. ';
+    tip2.innerHTML = '2. Back up your data in the cloud or with an external hard drive.';
   } else if (highest === 4) {
     weaknessTitle.innerHTML = 'Data Breach Monitoring';
-    weaknessContent.innerHTML = 'Data Breach Monitoring - A high risk score means that you are an easy target for data attacks. Don’t fret! You’ve made it this far which means that you’ve already learned a few tricks to better protect your personal data online.'
-    console.log('Weakness: Data Breach Monitoring');
+    weaknessContent.innerHTML = 'Data Breach Monitoring - A high risk score means that you are an easy target for data attacks. Don’t fret! You’ve made it this far which means that you’ve already learned a few tricks to better protect your personal data online.';
+    tip1.innerHTML = '1. Use Multi-factor authentication when available. Check out <a target="_blank" href="https://www.microsoft.com/en-us/security/mobile-authenticator-app">Microsoft Authenticator app here.';
+    tip2.innerHTML = '2. Set up account alerts on bank accounts. ';
+    tip3.innerHTML = '3. Use a credit card when shopping online to protect your checking account. ';
+    // console.log('Weakness: Data Breach Monitoring');
   }
 
 
@@ -511,131 +546,131 @@ async function determineTop10Scores() {
 
   const getTheUsersScore = function(a) {
 
-    console.log(qStatements);
+    // console.log(qStatements);
 
     for (let i = 1; i < a.length; i++) {
       if (a[i].actor.name !== currentUserName) {
         currentUserName = a[i].actor.name;
-        console.log(currentUserName);
+        // console.log(currentUserName);
         currentUserSelection = a[i].result.response;
-        console.log(currentUserSelection);
+        // console.log(currentUserSelection);
 
         userGroup.push(currentUserName);
 
         if (currentUserSelection === 'question-1-A') {
           currentUserScore += 1;
-          console.log(currentUserScore);
+          // console.log(currentUserScore);
         } else if (currentUserSelection === 'question-1-B') {
           currentUserScore += 2.5;
-          console.log(currentUserScore);
+          // console.log(currentUserScore);
         } else if (currentUserSelection === 'question-1-C') {
           currentUserScore += 4;
-          console.log(currentUserScore);
+          // console.log(currentUserScore);
         } else if (currentUserSelection === 'question-2-A') {
           currentUserScore += 1;
-          console.log(currentUserScore);
+          // console.log(currentUserScore);
         } else if (currentUserSelection === 'question-2-B') {
           currentUserScore += 2;
-          console.log(currentUserScore);
+          // console.log(currentUserScore);
         } else if (currentUserSelection === 'question-2-C') {
           currentUserScore += 3;
-          console.log(currentUserScore);
+          // console.log(currentUserScore);
         } else if (currentUserSelection === 'question-2-D') {
           currentUserScore += 4;
-          console.log(currentUserScore);
+          // console.log(currentUserScore);
         } else if (currentUserSelection === 'question-3-A') {
           currentUserScore += 1;
-          console.log(currentUserScore);
+          // console.log(currentUserScore);
         } else if (currentUserSelection === 'question-3-B') {
           currentUserScore += 2;
-          console.log(currentUserScore);
+          // console.log(currentUserScore);
         } else if (currentUserSelection === 'question-3-C') {
           currentUserScore += 3;
-          console.log(currentUserScore);
+          // console.log(currentUserScore);
         } else if (currentUserSelection === 'question-3-D') {
           currentUserScore += 4;
-          console.log(currentUserScore);
+          // console.log(currentUserScore);
         } else if (currentUserSelection === 'question-4-A') {
           currentUserScore += 1;
-          console.log(currentUserScore);
+          // console.log(currentUserScore);
         } else if (currentUserSelection === 'question-4-B') {
           currentUserScore += 2.5;
-          console.log(currentUserScore);
+          // console.log(currentUserScore);
         } else if (currentUserSelection === 'question-4-C') {
           currentUserScore += 4;
-          console.log(currentUserScore);
+          // console.log(currentUserScore);
         } else if (currentUserSelection === 'question-5-A') {
           currentUserScore += 1;
-          console.log(currentUserScore);
+          // console.log(currentUserScore);
         } else if (currentUserSelection === 'question-5-B') {
           currentUserScore += 2.5;
-          console.log(currentUserScore);
+          // console.log(currentUserScore);
         } else if (currentUserSelection === 'question-5-C') {
           currentUserScore += 4;
-          console.log(currentUserScore);
+          // console.log(currentUserScore);
         }
 
       } else if (a[i].actor.name === currentUserName) {
         currentUserSelection = a[i].result.response;
-        console.log(currentUserSelection);
+        // console.log(currentUserSelection);
 
         if (currentUserSelection === 'question-1-A') {
           currentUserScore += 1;
-          console.log(currentUserScore);
+          // console.log(currentUserScore);
         } else if (currentUserSelection === 'question-1-B') {
           currentUserScore += 2.5;
-          console.log(currentUserScore);
+          // console.log(currentUserScore);
         } else if (currentUserSelection === 'question-1-C') {
           currentUserScore += 4;
-          console.log(currentUserScore);
+          // console.log(currentUserScore);
         } else if (currentUserSelection === 'question-2-A') {
           currentUserScore += 1;
-          console.log(currentUserScore);
+          // console.log(currentUserScore);
         } else if (currentUserSelection === 'question-2-B') {
           currentUserScore += 2;
-          console.log(currentUserScore);
+          // console.log(currentUserScore);
         } else if (currentUserSelection === 'question-2-C') {
           currentUserScore += 3;
-          console.log(currentUserScore);
+          // console.log(currentUserScore);
         } else if (currentUserSelection === 'question-2-D') {
           currentUserScore += 4;
-          console.log(currentUserScore);
+          // console.log(currentUserScore);
         } else if (currentUserSelection === 'question-3-A') {
           currentUserScore += 1;
-          console.log(currentUserScore);
+          // console.log(currentUserScore);
         } else if (currentUserSelection === 'question-3-B') {
           currentUserScore += 2;
-          console.log(currentUserScore);
+          // console.log(currentUserScore);
         } else if (currentUserSelection === 'question-3-C') {
           currentUserScore += 3;
-          console.log(currentUserScore);
+          // console.log(currentUserScore);
         } else if (currentUserSelection === 'question-3-D') {
           currentUserScore += 4;
-          console.log(currentUserScore);
+          // console.log(currentUserScore);
         } else if (currentUserSelection === 'question-4-A') {
           currentUserScore += 1;
-          console.log(currentUserScore);
+          // console.log(currentUserScore);
         } else if (currentUserSelection === 'question-4-B') {
           currentUserScore += 2.5;
-          console.log(currentUserScore);
+          // console.log(currentUserScore);
         } else if (currentUserSelection === 'question-4-C') {
           currentUserScore += 4;
-          console.log(currentUserScore);
+          // console.log(currentUserScore);
         } else if (currentUserSelection === 'question-5-A') {
           currentUserScore += 1;
-          console.log(currentUserScore);
+          // console.log(currentUserScore);
         } else if (currentUserSelection === 'question-5-B') {
           currentUserScore += 2.5;
-          console.log(currentUserScore);
+          // console.log(currentUserScore);
         } else if (currentUserSelection === 'question-5-C') {
           currentUserScore += 4;
-          console.log(currentUserScore);
+          // console.log(currentUserScore);
         }
       
       
       
       }
-      console.log(userGroup);
+      // console.log(userGroup);
     }
 
 

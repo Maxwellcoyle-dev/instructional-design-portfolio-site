@@ -173,6 +173,12 @@ button:hover {
 
 /* Grid Sizing */
 
+.sticky-next-button {
+  position: fixed;
+  bottom: 12rem;
+  right: 2rem;
+}
+
 .results-column-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;

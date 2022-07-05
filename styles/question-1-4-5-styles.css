@@ -135,9 +135,10 @@ button:hover {
 }
 
 .scroll-down {
-  margin-top: 1rem;
-  margin-bottom: 3rem;
-  width: max-content;
+  margin-top: 2rem;
+  padding: .5rem 1rem;
+  justify-self: flex-start;
+  align-self: flex-start;
   display: none;
 }
 
@@ -148,7 +149,19 @@ button:hover {
 #results-section {
   display: none;
   padding-top: 8rem;
+  height: 100%;
+  position: relative;
 }
+
+.sticky-next-button {
+  position: fixed;
+  bottom: 12rem;
+  right: 2rem;
+}
+
+
+
+
 
 .grid-main-container {
   background-color: var(--secondary-yellow);
@@ -417,18 +430,20 @@ button:hover {
   display: inline-flex;
   flex-direction: row;
   width: 100%;
-  padding: 2rem 4rem 2rem 4rem;
+  height: auto;
+  padding: 2rem 8rem 2rem 4rem;
   margin-bottom: 6rem;
   align-items: center;
   justify-content: center;
 }
 
-.next-question-text {
-  width: 50%;
+.next-question-div h2 {
+  width: 40%;
 }
 
-.next-question-img {
-  width: 30%;
+.next-question-div img {
+  width: 20%;
+  height: auto;
 }
 
 /* QUESTION 4 NEXT QUESTION IMAGE DIV */
