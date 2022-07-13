@@ -79,37 +79,55 @@
 
 .course-info-div-one {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 4rem;
   margin-bottom: 4rem;
-  padding: 4rem;
+  padding: 4rem 8rem;
   justify-content: center;
   align-items: center;
+}
+
+.CID-column-1 {
+  grid-column: 1 / 3;
+  text-align: center;
+}
+
+.course-info-div-one h2 {
+  font-size: 2.25rem;
+  line-height: 3rem;
+}
+
+.CID-column-2 {
   background-color: var(--secondary-green);
+  padding: 1.5rem;
+  border-radius: .5rem;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
-.CID-column-1 .subheader {
-  padding-top: .5rem;
-  padding-bottom: .5rem;
+.CID-column-2:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
-.CID-column-1 p {
+.CID-column-2 p {
   width: 90%;
   line-height: 1.2rem;
-  padding-bottom: .25rem;
 }
 
-.sub-header {
-  font-size: .7rem;
-}
-
-.CID-column-2 img {
-  width: 70%;
+.CID-column-3 img {
+  width: 100%;
+  height: auto;
 }
 
 .CID-column-3 {
   display: flex;
   flex-direction: column;
-
   align-items: center;
 
 }
@@ -132,7 +150,7 @@
   margin-left: 4rem;
   margin-right: 4rem;
   margin-top: 4rem;
-  margin-bottom: 3rem;
+  margin-bottom: 7rem;
   column-gap: 3rem;
 }
 
@@ -174,7 +192,11 @@
 .slideshow-container {
   position: relative;
   margin: auto;
-  padding-bottom: 4rem;
+  padding-bottom: 6rem;
+}
+
+.slide-container {
+  height: fit-content;
 }
 
 /* Hide the images by default */
@@ -186,9 +208,9 @@
 .prev {
   cursor: pointer;
   position: absolute;
-  top: 50%;
+  top: 35%;
   width: auto;
-  margin-top: -22px;
+  margin-top: -44px;
   padding: 16px;
   color: var(--primary-red);
   font-weight: bold;
@@ -201,9 +223,9 @@
 .next {
   cursor: pointer;
   position: absolute;
-  top: 50%;
+  top: 35%;
   width: auto;
-  margin-top: -22px;
+  margin-top: -44px;
   padding: 16px;
   color: var(--primary-red);
   font-weight: bold;
@@ -263,7 +285,7 @@
   grid-column: 1/2;
   grid-template-columns: 1.5fr 1fr;
   display: grid;
-  width: 90%;
+  width: 80%;
   margin: 3rem auto;
   padding: 1.5rem;
   border-radius: .5rem;
@@ -317,26 +339,4 @@
 
 .card-two {
   background-color: var(--secondary-red);
-}
-
-
-
-
-
-
-
-
-
-/* SCROLL TO TOP TRIGGER STYLES */
-
-.back-to-course-img-div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 3rem;
-}
-
-.back-to-course-img-div img {
-  width: 4rem;
-  cursor: pointer;
 }
