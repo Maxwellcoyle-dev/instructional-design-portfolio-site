@@ -35,7 +35,7 @@
 .landing-page-about-me-div {
   width: 50%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.5fr 1fr;
   align-self: center;
   row-gap: 1rem;
 }
@@ -50,10 +50,15 @@
   grid-row: 2 / 3;
 }
 
+.tech-stack-image-div a {
+  grid-column: 2 / 3;
+}
+
 .tech-stack-image-div img {
-  width: 5rem;
+  width: 4rem;
   height: 5rem;
   border: none;
+  justify-self: flex-end;
 }
 
 
@@ -65,17 +70,17 @@
 
 .tech-stack-image-div {
   display: grid;
-  width: 75%;
+  width: 100%;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  padding: .5rem 0rem;
   row-gap: .5rem;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .landing-page-about-me-div .tech-stack-image-div img {
   width: 2rem;
   height: auto;
-  margin: auto;
 }
 
 .landing-page-about-me-div a {
@@ -335,7 +340,6 @@
 }
 
 .content-card-image-div-one {
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -376,7 +380,6 @@
   flex-direction: row;
   justify-content: flex-start;
   column-gap: 3rem;
-
 }
 
 
