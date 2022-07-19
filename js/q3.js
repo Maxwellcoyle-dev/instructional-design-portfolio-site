@@ -62,6 +62,7 @@ question3A.addEventListener('click', option3A = () => {
   question3A.style.pointerEvents = 'none';
   question3A.style.backgroundColor = '#007A78';
   question3A.style.color = '#FDFCDC';
+  document.getElementById('q3-main-container').style.marginTop = '4rem';
 
   choiceA = true;
 
@@ -78,6 +79,7 @@ question3B.addEventListener('click', option3B = () =>{
   question3B.style.color = '#FDFCDC';
   Feedback3B.style.display = 'block';
   question3B.style.pointerEvents = 'none';
+  document.getElementById('q3-main-container').style.marginTop = '4rem';
 
   choiceB = true;
 
@@ -94,6 +96,7 @@ question3C.addEventListener('click', option3C = () =>{
   question3C.style.color = '#FDFCDC';
   Feedback3C.style.display = 'block';
   question3C.style.pointerEvents = 'none';
+  document.getElementById('q3-main-container').style.marginTop = '4rem';
   
   choiceC = true;
 
@@ -109,6 +112,7 @@ question3D.addEventListener('click', option3D = () =>{
   question3D.style.color = '#FDFCDC';
   Feedback3D.style.display = 'block';
   question3D.style.pointerEvents = 'none';
+  document.getElementById('q3-main-container').style.marginTop = '4rem';
   
   choiceD = true;
 

@@ -26,7 +26,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   font-weight: 600;
   line-height: 2rem;
 }
@@ -42,7 +42,9 @@ h4 {
 
 p {
   font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600;
   line-height: 1.4rem;
+  font-size: 1.1rem;
 }
 
 a {
@@ -68,12 +70,19 @@ button:hover {
 
 .question-main-container {
   display: grid;
-  padding-top: 5rem;
-  margin-left: 4rem;
+  grid-template-columns: 1.2fr .8fr;
+  margin: 0rem 4rem;
+  height: 100vh;
+  justify-content: center;
+  padding-bottom: 6rem;
 }
 
-.question-main-container p {
-  grid-column: 1/2;
+.content-side-div {
+ display: flex;
+ flex-direction: column;
+ row-gap: .25rem;
+ justify-content: center;
+ height: 100%;
 }
 
 .question-number {
@@ -85,13 +94,11 @@ button:hover {
 }
 
 .question-main-container h2 {
-  grid-column: 1/ span 2;
-  width: 80%;
+  width: 100%;
   padding-bottom: 1.5rem;
   color: var(--primary-red);
 }
 .question-main-container .option-container-div {
-  grid-column: 1/2;
   display: grid;
   row-gap: .5rem;
   flex-direction: column;
@@ -126,12 +133,13 @@ button:hover {
 
 
 .question-main-container .question-image-div {
-  grid-column: 2/2;
-  grid-row: 3 / span 3;
+display: flex;
+justify-content: center;
+align-items: center;
 }
 
 .question-image-div img {
-  width: 70%;
+  width: 90%;
 }
 
 .scroll-down {
@@ -432,7 +440,7 @@ button:hover {
   width: 100%;
   height: auto;
   padding: 2rem 8rem 2rem 4rem;
-  margin-bottom: 6rem;
+  margin-bottom: 4rem;
   align-items: center;
   justify-content: center;
 }

@@ -43,6 +43,7 @@ questionA.addEventListener('click', optionA = () => {
   questionA.style.backgroundColor = '#007A78';
   questionA.style.color = '#FDFCDC';
   questionA.style.pointerEvents = 'none';
+  document.getElementById('q4-main-container').style.marginTop = '4rem';
 
   choiceA = true;
 
@@ -57,6 +58,7 @@ questionB.addEventListener('click', optionB = () =>{
   questionB.style.color = '#FDFCDC';
   FeedbackB.style.display = 'block';
   questionB.style.pointerEvents = 'none';
+  document.getElementById('q4-main-container').style.marginTop = '4rem';
 
   choiceB = true;
  
@@ -71,6 +73,7 @@ questionC.addEventListener('click', optionC = () =>{
   questionC.style.color = '#FDFCDC';
   FeedbackC.style.display = 'block';
   questionC.style.pointerEvents = 'none';
+  document.getElementById('q4-main-container').style.marginTop = '4rem';
   
   choiceC = true;
 

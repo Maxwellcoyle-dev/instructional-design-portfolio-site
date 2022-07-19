@@ -39,37 +39,24 @@ let tip3 = document.getElementById('tip-3');
 async function get_statements() {
 
   const quizParams1 = ADL.XAPIWrapper.searchParams();
-
-
   quizParams1['answered'] = "http://adlnet.gov/expapi/verbs/answered";
-
-
   const qQueryData = await ADL.XAPIWrapper.getStatements(quizParams1);
   // console.log(qQueryData);
 
-
   qStatements = await qQueryData.statements;
 
-
 /* AVERAGE RESPONSE DATA */ 
-
-  
-
   qStatements.forEach(statement => {
     if (statement.result) {
       groupResponses.push(statement.result.response);
       groupNames.push(statement.actor.name);
     }
   })
-
-
   // console.log(groupResponses);
   // console.log(groupNames);
-  
 
   let q1GroupTotalRisk = 0;
   let q1NumOfResponses = 0;
-
 
   let q2GroupTotalRisk = 0;
   let q2NumOfResponses = 0;
@@ -82,8 +69,6 @@ async function get_statements() {
 
   let q5GroupTotalRisk = 0;
   let q5NumOfResponses = 0;
-
-
 
   groupResponses.forEach(response => {
     if (response === 'question-1-A') {
@@ -148,7 +133,6 @@ async function get_statements() {
     } 
   })
 
-
   q1Average = q1GroupTotalRisk / q1NumOfResponses;
   q1Average = q1Average.toFixed(2);
 
@@ -170,11 +154,9 @@ async function get_statements() {
   // console.log(q4Average);
   // console.log(q5Average);
 
-
-
 /* USER RESPONSE DATA */
-
   let userResponses = [];
+  let totalUserRisk = 0;
 
   qStatements.forEach(statement => {
     if (statement.actor.name === userName) {
@@ -182,13 +164,7 @@ async function get_statements() {
     }
   })
 
-
   // console.log(groupResponses);
-
-
-
-
-
 
   userResponses.forEach(response => {
     if (response === 'question-1-A') {
@@ -237,7 +213,6 @@ async function get_statements() {
     } 
   });
 
-
   let totalUserScore = q1UserRisk + q2UserRisk + q3UserRisk + q4UserRisk + q5UserRisk;
 
   if (totalUserScore > 15) {
@@ -250,17 +225,6 @@ async function get_statements() {
     yourScore.innerHTML = totalUserScore;
     yourScore.style.color = '#D94F04';
   }
-
-
-
-
-  // console.log(q1UserRisk);
-  // console.log(q2UserRisk);
-  // console.log(q3UserRisk);
-  // console.log(q4UserRisk);
-  // console.log(q5UserRisk);
-
-
 
   const labels = [
     'Password Management',
@@ -291,7 +255,6 @@ async function get_statements() {
       }
     ]
   };
-
 
   const chart = document.getElementById('myChart').getContext('2d');
   const myChart = new Chart(chart, {
@@ -366,36 +329,23 @@ async function get_statements() {
 window.addEventListener('load', get_statements);
 
 
-
-
-
-
-
 let userRiskLow = false;
 let userRiskMedium = false;
 let userRiskHigh = false;
 
 
 /* determine the user Risk Score */
-
-
-
-
-
-
 let lowRiskCardView = document.getElementById('low-risk')
 let medRiskCardView = document.getElementById('med-risk');
 let highRiskCardView = document.getElementById('high-risk');
 
 async function determineUserScore() {
 
-
   let userResponseNumbers = [q1UserRisk, q2UserRisk, q3UserRisk, q4UserRisk, q5UserRisk];
   // console.log(userResponseNumbers);
 
   let userFinalRiskScore = userResponseNumbers.reduce((partialSum, a) => partialSum + a, 0);
   // console.log(userFinalRiskScore);
-
 
   if (userFinalRiskScore >= 15) {
     userRiskHigh = true;
@@ -413,8 +363,6 @@ async function determineUserScore() {
     // console.log(userRiskLow);
   }
 
-
-
   let strengthTitle = document.getElementById('strength-title');
   let strengthContent = document.getElementById('strength-content');
   let weaknessTitle = document.getElementById('weakness-title');
@@ -423,9 +371,6 @@ async function determineUserScore() {
 
   // console.log(userResponseNumbers);
 
-
- 
-  
   let lowest = 0;
 
   const indexOfMin = function(a) {
@@ -439,7 +384,6 @@ async function determineUserScore() {
 
   // console.log(lowest);
   indexOfMin(userResponseNumbers);
-
 
   if (lowest === 0) {
     // console.log(lowest);
@@ -465,9 +409,6 @@ async function determineUserScore() {
     // console.log('Strength: Data Breach Monitoring');
   }
 
-
-
-
   let highest = 0;
 
   const indexOfMax = function(a) {
@@ -481,8 +422,6 @@ async function determineUserScore() {
 
   // console.log(highest);
   indexOfMax(userResponseNumbers);
-
-
 
   if (highest === 0) {
     weaknessTitle.innerHTML = 'Password Management';
