@@ -26,7 +26,7 @@
 
   </head>
   <body>
-
+<!-- 
     <script language="Javascript">
       window.onload=function(){
       var mobile = (/iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(navigator.userAgent.toLowerCase()));
@@ -36,37 +36,42 @@
   
       }
     }
-    </script>
+    </script> -->
 
     <div class="page-container">
-      <nav class="navbar">
-        
-        <a href="index.html"><img id="landing-top-trigger" src="images/hdc-yellow.png" alt="Henderson Design & Consulting - Company Logo"></a>
-        
-        <ul class="nav">
-          <div class="menu">
-            <li class="nav-item"><a href="data-security-home-page.html">Data Security 101</a></li>
-            <li class="nav-item"><a href="portfolio-projects.html">Portfolio Projects</a></li>
-            <li class="nav-item"><a href="connect.html">Connect</a></li>
-          </div>
 
-        </ul>
+      <nav class="navbar" id="topNav">
+        <div class="home-icon">
+          <a href="index.html"><img id="landing-top-trigger" src="images/hdc-yellow.png" alt="Henderson Design & Consulting - Company Logo"></a>
+        </div>
+        
+        <a href="#" class="toggle-btn">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </a>
+
+        <div class="navbar-links">
+          <ul>
+            <li><a href="data-security-home-page.html">Data Security 101</a></li>
+            <li><a href="portfolio-projects.html">Portfolio</a></li>
+            <li><a href="connect.html">Connect</a></li>
+          </ul>
+        </div>
+
       </nav>
 
       <div id="landing-top-scroll-point"></div>
 
-      
       <div class="landing-page-hero-section">
-
-
         <div class="landing-page-hero-div">
           <h1>Hi! <br>I'm Max.</h1>
         </div>
 
         <div class="landing-page-about-me-div">
-          <h2>Technical Instructional Designer</h2>
+          <h2>A Technical Instructional Designer</h2>
           <p>I design and develop modern learning experiences using cutting edge tools like JavaScript, xAPI, HTML, CSS, Articulate Storyline, and the Adobe Suite. The intersection of learning theory and technical innovation is where I work best. 
-          <strong><br>Ask me how xAPI & JavaScript integrations can transform digital learning.</strong></p>
+          <strong><br><br>Ask me how xAPI & JavaScript integrations can transform digital learning.</strong></p>
 
           <div class="tech-stack-image-div">
             <img src="images/javascript.svg">
@@ -81,14 +86,16 @@
             <img src="images/aws.svg">
             <img src="images/microsoft.svg">
           </div>
-          <a href="https://www.linkedin.com/in/max-henderson-elearning-developer/"><img src="images/head-shot.png" alt="Headshot of Max Henderson"></a>
+          <a class="headshot-image" href="https://www.linkedin.com/in/max-henderson-elearning-developer/"><img src="images/head-shot.png" alt="Headshot of Max Henderson"></a>
           <!-- <h4 class="scroll-down">Scroll down for projects & more.</h4> -->
-          <div class="landing-page-button-div">
+          <div class="desktop-button-div">
             <a id="scroll-to-projects"><button>Projects</button></a>
             <a id="scroll-to-resume"><button>Resume</button></a>
           </div>
-
-
+          <div class="mobile-button-div">
+            <a href="portfolio-projects.html"><button>Projects</button></a>
+            <a href="about-me.html"><button>Resume</button></a>
+          </div>
         </div>
 
       </div>
@@ -122,7 +129,7 @@
 
       <h1 id="portfolio-projects">Portfolio Projects</h1>
       
-  <!-- Slideshow container -->
+      <!-- Slideshow container -->
       <div class="slideshow-container">
 
         <div class="slide fade">
@@ -254,138 +261,138 @@
 
 
 
-    <div id="resume-down-point"><br><br><br><br></div>
+      <div id="resume-down-point"><br><br><br><br></div>
 
 
-    <div class="about-me-header">
+      <div class="about-me-header">
 
-      <h1 id="about-me">About Me</h1>
+        <h1 id="about-me">About Me</h1>
 
-      <a target="_blank" href="documents/Max-Henderson-Instructional-Designer.pdf"><button id="view-resume">Max's Resume</button></a>
+        <a target="_blank" href="documents/Max-Henderson-Instructional-Designer.pdf"><button id="view-resume">Download Resume</button></a>
 
-    </div>
+      </div>
 
 
-    <div class="my-focus-section">
+      <div class="my-focus-section">
 
-      <div class="my-focus-header-div">
-        <img src="images/head-shot.png">
-        <div>
-          <h3 class="red-text">My Focus</h3>
-          <p><strong>Bringing technical innovation to Learning & Development</strong></p>
+        <div class="my-focus-header-div">
+          <img src="images/head-shot.png">
+          <div>
+            <h3 class="red-text">My Focus</h3>
+            <p><strong>Bringing technical innovation to Learning & Development</strong></p>
+          </div>
+
+        </div>
+
+        <div class="my-focus-description-div">
+          <p class="my-focus-p-1-header"><strong>What does this look like?</strong></p>
+          <p>Using xAPI & JavaScript it is possible to collect in depth data from any learning experience. This data can be visualized into a dashboard for management, used to gamify learning, or leveraged to make better UX and/or content decisions.</p>
+
+          <p>xAPI specifications can also be used to collect data from other sources beyond eLearning & the LMS.</p>
+        </div>
+
+        <div class="my-focus-description-div">
+          <p class="my-focus-p-1-header"><strong>For example... </strong></p>
+          <p>Using xAPI, it’s possible to get insights into how a team is uses tools like Slack or Sales Force. This data could be visualized on a dashboard for team managers to see what practices lead to high performance.</p>
+
+          <p>xAPI can also be integrated with legacy eLearning and collect in depth learning data from traditional eLearning courses.</p>
         </div>
 
       </div>
 
-      <div class="my-focus-description-div">
-        <p class="my-focus-p-1-header"><strong>What does this look like?</strong></p>
-        <p>Using xAPI & JavaScript it is possible to collect in depth data from any learning experience. This data can be visualized into a dashboard for management, used to gamify learning, or leveraged to make better UX and/or content decisions.</p>
 
-        <p>xAPI specifications can also be used to collect data from other sources beyond eLearning & the LMS.</p>
-      </div>
-
-      <div class="my-focus-description-div">
-        <p class="my-focus-p-1-header"><strong>For example... </strong></p>
-        <p>Using xAPI, it’s possible to get insights into how a team is uses tools like Slack or Sales Force. This data could be visualized on a dashboard for team managers to see what practices lead to high performance.</p>
-
-        <p>xAPI can also be integrated with legacy eLearning and collect in depth learning data from traditional eLearning courses.</p>
-      </div>
-
-    </div>
-
-
-    <div class="tech-stack">
-      <div class="tech-stack-header">
-        <h3 class="green-text">Tech Stack</h3>
-        <div class="tech-stack-image-div">
-          <img src="images/javascript.svg">
-          <img src="/images/storyline-logo.svg">
-          <img src="images/html5.svg">
-          <img src="images/react.svg">
-          <img src="images/chart-area.svg">
-          <img src="images/jquery.svg">
-          <img src="images/aws.svg">
-          <img src="images/microsoft.svg">
+      <div class="tech-stack">
+        <div class="tech-stack-header">
+          <h3 class="green-text">Tech Stack</h3>
+          <div class="tech-stack-image-div">
+            <img src="images/javascript.svg">
+            <img src="/images/storyline-logo.svg">
+            <img src="images/html5.svg">
+            <img src="images/react.svg">
+            <img src="images/chart-area.svg">
+            <img src="images/jquery.svg">
+            <img src="images/aws.svg">
+            <img src="images/microsoft.svg">
+          </div>
         </div>
+
+        <div class="stack-list">
+          <p class="stack-list-header"><strong>Front End Stack</strong></p>
+          <p>HTML</p>
+          <p>JavaScript</p>
+          <p>CSS</p>
+          <p>React</p>
+          <p>jQuery</p>
+          <p>Chart.js</p>
+          <p>Rest API</p>
+          <p>AWS</p>
+          <p>Webflow</p>
+
+        </div>
+
+        <div class="stack-list">
+          <p class="stack-list-header"><strong>Instructional Design Stack</strong></p>
+          <p>Storyline</p>
+          <p>Rise</p>
+          <p>xAPI</p>
+          <p>Camtasia</p>
+          <p>Vyond</p>
+          <p>Snaggit</p>
+          <p>Adobe XD</p>
+          <p>Adobe Illustrator</p>
+          <p>Docebo</p>
+
+        </div>
+
       </div>
 
-      <div class="stack-list">
-        <p class="stack-list-header"><strong>Front End Stack</strong></p>
-        <p>HTML</p>
-        <p>JavaScript</p>
-        <p>CSS</p>
-        <p>React</p>
-        <p>jQuery</p>
-        <p>Chart.js</p>
-        <p>Rest API</p>
-        <p>AWS</p>
-        <p>Webflow</p>
+
+      <div class="work-history-section">
+        <h3 class="red-text">Key Work History</h3>
+
+        <div class="work-history-block work-history-1">
+          <p><strong>Company: </strong>Henderson Design & Consulting</p>
+          <p><strong>Role: </strong>Front End Developer / Instructional Designer</p>
+          <p><strong>Responsibilities:</strong></p>
+          <ul>
+            <li>Build custom content using HTML, CSS, JavaScript, React</li>
+            <li>eLearning development in Articulate Storyline & Rise</li>
+            <li>Design websites using up to date UI / UX design principals</li>
+            <li>LMS implementation & management</li>
+          </ul>
+        </div>
+
+        <div class="work-history-block work-history-2">
+          <p><strong>Company: </strong>Trainicity</p>
+          <p><strong>Role: </strong>Instructional Designer</p>
+          <p><strong>Responsibilities:</strong></p>
+          <ul>
+            <li>Develop eLearning courses, instructional videos, job aids, corporate documents, PPTs, and content for social media marketing</li>
+            <li>Own content development from conception to delivery</li>
+            <li>Meet with SME's to define projects and then use ADDIE to manage projects from start to finish</li>
+            <li>Conceptualize the content in a design document & outline a learner-centered solution that achieves the business goal</li>
+            <li>Conceptualize the content in a design document & outline a learner-centered solution that achieves the business goal</li>
+            <li>Use project management skills and software to manage 3-5 overlapping projects</li>
+            <li>Use HTML, CSS, and Javascript to develop custom solutions</li>
+            <li>Support Trainicity's web development, blog, and social media marketing efforts</li>
+            <li>Support LMS (Docebo) Implementations</li> 
+          </ul>
+        </div>
+
+        <div class="work-history-block work-history-3">
+          <p><strong>Company: </strong>University of Utah</p>
+          <p><strong>Role: </strong>English Language Instructor</p>
+          <p><strong>Responsibilities: </strong></p>
+          <ul>
+            <li>University Academic English Language Courses</li>
+            <li>Own content development from conception to delivery</li>
+            <li>Taught in-person & virtual classes ranging from 10 to 25 students</li>
+            <li>Curriculum development and lesson planning for advanced Grammar, Reading, Writing, & speaking courses</li>
+            <li>LMS Management</li>
+          </ul>
+        </div>
 
       </div>
-
-      <div class="stack-list">
-        <p class="stack-list-header"><strong>Instructional Design Stack</strong></p>
-        <p>Storyline</p>
-        <p>Rise</p>
-        <p>xAPI</p>
-        <p>Camtasia</p>
-        <p>Vyond</p>
-        <p>Snaggit</p>
-        <p>Adobe XD</p>
-        <p>Adobe Illustrator</p>
-        <p>Docebo</p>
-
-      </div>
-
-    </div>
-
-
-    <div class="work-history-section">
-      <h3 class="red-text">Key Work History</h3>
-
-      <div class="work-history-block work-history-1">
-        <p><strong>Company: </strong>Henderson Design & Consulting</p>
-        <p><strong>Role: </strong>Front End Developer / Instructional Designer</p>
-        <p><strong>Responsibilities:</strong></p>
-        <ul>
-          <li>Build custom content using HTML, CSS, JavaScript, React</li>
-          <li>eLearning development in Articulate Storyline & Rise</li>
-          <li>Design websites using up to date UI / UX design principals</li>
-          <li>LMS implementation & management</li>
-        </ul>
-      </div>
-
-      <div class="work-history-block work-history-2">
-        <p><strong>Company: </strong>Trainicity</p>
-        <p><strong>Role: </strong>Instructional Designer</p>
-        <p><strong>Responsibilities:</strong></p>
-        <ul>
-          <li>Develop eLearning courses, instructional videos, job aids, corporate documents, PPTs, and content for social media marketing</li>
-          <li>Own content development from conception to delivery</li>
-          <li>Meet with SME's to define projects and then use ADDIE to manage projects from start to finish</li>
-          <li>Conceptualize the content in a design document & outline a learner-centered solution that achieves the business goal</li>
-          <li>Conceptualize the content in a design document & outline a learner-centered solution that achieves the business goal</li>
-          <li>Use project management skills and software to manage 3-5 overlapping projects</li>
-          <li>Use HTML, CSS, and Javascript to develop custom solutions</li>
-          <li>Support Trainicity's web development, blog, and social media marketing efforts</li>
-          <li>Support LMS (Docebo) Implementations</li> 
-        </ul>
-      </div>
-
-      <div class="work-history-block work-history-3">
-        <p><strong>Company: </strong>University of Utah</p>
-        <p><strong>Role: </strong>English Language Instructor</p>
-        <p><strong>Responsibilities: </strong></p>
-        <ul>
-          <li>University Academic English Language Courses</li>
-          <li>Own content development from conception to delivery</li>
-          <li>Taught in-person & virtual classes ranging from 10 to 25 students</li>
-          <li>Curriculum development and lesson planning for advanced Grammar, Reading, Writing, & speaking courses</li>
-          <li>LMS Management</li>
-        </ul>
-      </div>
-
-    </div>
 
 
 
@@ -400,7 +407,7 @@
         <div class="connect-content">
   
   
-          <a target="_blank" href="https://www.linkedin.com/in/max-henderson-elearning-developer/"><h2>Connect</h2></a>
+          <a class="connect" target="_blank" href="https://www.linkedin.com/in/max-henderson-elearning-developer/"><h2>Connect</h2></a>
   
           <div class="connect-options-div">
 
@@ -418,6 +425,8 @@
 
     <script type="text/javascript" src="js/content-slide-show.js"></script>
     <script type="text/javascript" src="js/landing-page-scrolling.js"></script>
+    <script type="text/javascript" src="js/navbar.js"></script>
+
 
 
   </body>

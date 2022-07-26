@@ -25,18 +25,25 @@
     <div class="page-container">
       <!-- NAV BAR -->
 
-      <nav class="navbar">
+      <nav class="navbar" id="topNav">
+        <div class="home-icon">
+          <a href="index.html"><img id="landing-top-trigger" src="images/hdc-yellow.png" alt="Henderson Design & Consulting - Company Logo"></a>
+        </div>
         
-        <a href="index.html"><img id="landing-top-trigger" src="images/hdc-yellow.png" alt="Henderson Design & Consulting - Company Logo"></a>
-        
-        <ul class="nav">
-          <div class="menu">
-            <li class="nav-item"><a href="data-security-home-page.html">Data Security 101</a></li>
-            <li class="nav-item"><a href="portfolio-projects.html">Portfolio Projects</a></li>
-            <li class="nav-item"><a href="connect.html">Connect</a></li>
-          </div>
+        <a href="#" class="toggle-btn">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </a>
 
-        </ul>
+        <div class="navbar-links">
+          <ul>
+            <li><a href="data-security-home-page.html">Data Security 101</a></li>
+            <li><a href="portfolio-projects.html">Portfolio</a></li>
+            <li><a href="connect.html">Connect</a></li>
+          </ul>
+        </div>
+
       </nav>
 
 
@@ -48,7 +55,7 @@
         <div class="projects-hero-column-left">
           
           <h1 class="green-text">Portfolio Projects</h1>
-          <h3>Check out a few projects I've built</h3>
+          <h3>Check out a few projects I've built.</h3>
           <a id="project-page-down-trigger"><strong class="red-text">Scroll down to see projects</strong></a>
 
         </div>
@@ -116,8 +123,9 @@
             <div class="tech-stack-div">
               <p>xAPI<br>JavaScript<br>HTML<br>CSS<br>Adobe Illustrator</p>
               <p>Chart.js<br>jQuery<br>AWS<br>Veracity LRS<br>Adobe XD</p>
-              <a href="data-security-home-page.html"><button>See course</button></a>
+              <a class="desktop-view-course-btn"  href="data-security-home-page.html"><button>See course</button></a>
             </div>
+            <a class="mobile-view-course-btn" href="data-security-home-page.html"><button>See course</button></a>
           </div>
 
         </div>
@@ -141,8 +149,9 @@
             <h4 class="red-text">Tech Stack</h4>
             <div class="tech-stack-div">
               <p>Articulate Storyline<br>Adobe XD<br>Adobe Illustrator</p>
-              <a href="saving-strategies.html"><button>See course</button></a>
+              <a class="desktop-view-course-btn"  href="saving-strategies.html"><button>See course</button></a>
             </div>
+            <a class="mobile-view-course-btn" href="saving-strategies.html"><button>See course</button></a>
           </div>
 
         </div>
@@ -176,8 +185,9 @@
             <h4 class="green-text">Tech Stack</h4>
             <div class="tech-stack-div">
               <p>Articulate Storyline<br>Adobe Illustrator <br>Adobe XD <br>Microsoft PowerPoint</p>
-              <a href="acute-stroke-training.html"><button>See course</button></a>
+              <a class="desktop-view-course-btn"  href="acute-stroke-training.html"><button>See course</button></a>
             </div>
+            <a class="mobile-view-course-btn" href="acute-stroke-training.html"><button>See course</button></a>
           </div>
 
         </div>
@@ -200,8 +210,9 @@
             <div class="tech-stack-div">
               <p>Articulate Storyline<br>Adobe Illustrator <br>Adobe XD</p>
               <p>PowerPoint<br>Snaggit<br>Camtasia</p>
-              <a href="vender-risk-management.html"><button>See course</button></a>
+              <a class="desktop-view-course-btn"  href="vender-risk-management.html"><button>See course</button></a>
             </div>
+            <a class="mobile-view-course-btn" href="vender-risk-management.html"><button>See course</button></a>
           </div>
 
         </div>
@@ -235,8 +246,9 @@
             <div class="tech-stack-div">
               <p>xAPI<br>JavaScript<br>HTML<br>CSS<br>Adobe Illustrator</p>
               <p>Chart.js<br>jQuery<br>AWS<br>Veracity LRS<br>Adobe XD</p>
-              <a target="_blank" href="https://360.articulate.com/review/content/33dd6a94-38d9-4e6b-88f8-8abbb17c81d3/review"><button>See course</button></a>
+              <a class="desktop-view-course-btn"  href="      https://360.articulate.com/review/content/33dd6a94-38d9-4e6b-88f8-8abbb17c81d3/review"><button>See course</button></a>
             </div>
+            <a class="mobile-view-course-btn" href="      https://360.articulate.com/review/content/33dd6a94-38d9-4e6b-88f8-8abbb17c81d3/review"><button>See course</button></a>
           </div>
 
         </div>
@@ -254,7 +266,7 @@
         <div class="connect-content">
   
   
-          <a target="_blank" href="https://www.linkedin.com/in/max-henderson-elearning-developer/"><h2>Connect</h2></a>
+          <a class="connect" target="_blank" href="https://www.linkedin.com/in/max-henderson-elearning-developer/"><h2>Connect</h2></a>
   
           <div class="connect-options-div">
              <a href="mailto:maxwellc.henderson@gmail.com" target="_blank"><img src="images/email-logo.svg" alt="email me link"></a>
@@ -267,7 +279,7 @@
 
     </div>
 
-
+    <script type="text/javascript" src="js/navbar.js"></script>
     <script src="js/portfolio-scrolling.js"></script>
 
   </body>

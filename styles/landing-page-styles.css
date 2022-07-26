@@ -98,10 +98,14 @@
   color: var(--primary-green);
 }
 
-.landing-page-button-div {
+.desktop-button-div {
   display: flex;
   flex-direction: row;
   column-gap: 1rem;
+}
+
+.mobile-button-div {
+  display: none;
 }
 
 
@@ -556,9 +560,95 @@
   padding-bottom: .5rem;
 }
 
-@media only screen and (max-width: 980px) {
-  .tech-stack {
-    padding: 2rem 4rem;
+@media (max-width: 600px) {
+  .landing-page-hero-section
+  {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding: 5rem 2rem 3rem 2rem;
+  }
+
+  .landing-page-hero-div 
+  {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .landing-page-hero-div h1 {
+    font-size: 3.5rem;
+    line-height: 4rem;
+  }
+
+  .landing-page-about-me-div 
+  {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    column-gap: 1.5rem;
+    padding-top: 1rem;
+  } 
+
+  .landing-page-about-me-div p 
+  {
+    width: 100%;
+  }
+
+  .tech-stack-image-div 
+  {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+
+  .landing-page-about-me-div .headshot-image
+  {
+    display: none;
+  }
+
+  .desktop-button-div 
+  {
+    display: none;
+  }
+
+  .mobile-button-div 
+  {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+  }
+
+  #portfolio-projects 
+  {
+    display: none;
+  }
+
+  .slideshow-container 
+  {
+    display: none;
+  }
+
+  .slide-show-dots
+  {
+    display: none;
+  }
+
+  .about-me-header 
+  {
+    display: none;
+  }
+
+  .my-focus-section
+  {
+    display: none;
+  }
+
+  .tech-stack 
+  {
+    display: none;
+  }
+
+  .work-history-section 
+  {
+    display: none;
   }
 }
 

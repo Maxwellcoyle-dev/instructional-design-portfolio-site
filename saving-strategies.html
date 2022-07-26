@@ -24,17 +24,25 @@
     
     <div class="page-container">
       <!-- NAV BAR -->
-      <nav class="navbar">
+      <nav class="navbar" id="topNav">
+        <div class="home-icon">
+          <a href="index.html"><img id="landing-top-trigger" src="images/hdc-yellow.png" alt="Henderson Design & Consulting - Company Logo"></a>
+        </div>
         
-        <a href="index.html"><img src="images/hdc-yellow.png">
-        <ul class="nav">
-          <div class="menu">
-            <li class="nav-item"><a href="data-security-home-page.html">Data Security 101</a></li>
-            <li class="nav-item"><a href="portfolio-projects.html">Portfolio Projects</a></li>
-            <li class="nav-item"><a href="connect.html">Connect</a></li>
-          </div>
+        <a href="#" class="toggle-btn">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </a>
 
-        </ul>
+        <div class="navbar-links">
+          <ul>
+            <li><a href="data-security-home-page.html">Data Security 101</a></li>
+            <li><a href="portfolio-projects.html">Portfolio</a></li>
+            <li><a href="connect.html">Connect</a></li>
+          </ul>
+        </div>
+
       </nav>
 
 
@@ -99,4 +107,6 @@
 
 
   </body>
+
+  <script type="text/javascript" src="js/navbar.js"></script>
 </html>

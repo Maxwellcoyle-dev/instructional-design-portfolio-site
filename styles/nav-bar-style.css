@@ -8,52 +8,109 @@
 
 .navbar {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   background-color: var(--primary-green);
   color: var(--secondary-yellow);
-  height: 3.5rem;
   width: 100%;
-
+  height: auto;
   position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 99;
+  z-index: 10001;
 }
 
-.nav a {
-  color: var(--secondary-yellow);
-  text-decoration: none;
+.home-icon {
+  align-items: flex-start;
+  height: fit-content;
+  margin-left: 1rem;
+  padding: 1rem 0;
 }
 
-.menu a:hover {
-  color: var(--primary-red);
-  transition: 0.3s ease;
+.home-icon img {
+  width: 7rem;
+  height: auto;
 }
 
-/* LOGO */
-
-.navbar img {
-  height: 1rem;
-  margin-left: 4rem;
-  cursor: pointer;
-}
-
-
-/* Nav Menu */
-.menu {
+.navbar-links ul {
+  margin: 0;
+  padding: 0;
   display: flex;
-  gap: 1rem;
-  margin-right: 4rem;
 }
 
-.menu li {
+.navbar-links li {
   list-style: none;
-  padding: 0 1rem;
-  font-family: 'Poppins', sans-serif;
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--secondary-yellow);
 }
 
+.navbar-links li a {
+  text-decoration: none;
+  color: var(--secondary-yellow);
+  padding: 1rem 2rem;
+  display: block;
+  font-weight: 600;
+  font-size: 1rem;
+}
 
+.navbar-links li a:hover {
+  color: var(--primary-red);
+}
+
+.toggle-btn {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 31px;
+  height: 21px;
+}
+
+.toggle-btn .bar {
+  height: 3px;
+  width: 100%;
+  background-color: var(--secondary-yellow);
+  border-radius: 10px;
+}
+
+@media (max-width: 600px) {
+  .toggle-btn {
+    display: flex;
+  }
+  .navbar-links {
+    width: 100%;
+    display: none;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+  }
+
+  .home-icon{
+    margin-left: 2rem;
+  }
+
+  .navbar-links ul {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .navbar-links li {
+    text-align: center;
+  }
+
+  .navbar-links li a {
+    padding: .5rem 1rem;
+  }
+
+  .navbar-links li a:hover {
+    color: var(--primary-red);
+  }
+
+  .navbar-links.active {
+    display: flex;
+  }
+  
+}
