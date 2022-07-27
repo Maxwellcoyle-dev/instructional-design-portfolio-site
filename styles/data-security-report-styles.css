@@ -458,10 +458,84 @@ ul {
   font-weight: 600;
 }
 
-
-
 .report-footer-div {
   background-color: var(--primary-green);
   height: 6rem;
   width: 100%;
+}
+
+
+
+@media (max-width: 600px) {
+  .report-header-div
+  {
+    width: 100%;
+    flex-direction: column;
+    margin: 0;
+    margin-top: 5rem;
+    padding: 0 1.5em;
+    text-align: center;
+  }
+  .report-header-text-div
+  {
+    width: 100%;
+    flex-direction: column;
+  }
+  #course-complete-image-div
+  {
+    width: 100%;
+  }
+  #course-complete-image
+  {
+    padding: 2rem;
+  }
+
+
+  .your-risk-div
+  {
+    flex-direction: column;
+    margin: 0;
+    padding: 2rem 1.5rem;
+
+  }  
+  .your-risk-div div 
+  {
+    width: 100%;
+  }
+  .overview-chart-canvas-div
+  {
+    display: none;
+  }
+
+  .leaderboard-section-div
+  {
+    margin: 0;
+    padding: 2rem 1.5rem;
+    grid-template-columns: 1fr;
+  }
+  .your-score-div
+  {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+  }
+  .top-ten-list-div
+  {
+    display: none;
+  }
+  .leaderboard-info-div
+  {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+
+
+  .strength-weakness-container-div
+  {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 2rem 1.5rem;
+  }
+
+
 }

@@ -11,7 +11,7 @@
 .projects-hero-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  height: 100vh;
+  height: 100%;
   align-items: center;
   padding-top: 3.5rem;
 }
@@ -43,8 +43,7 @@
 
 .projects-hero-column-right {
   background-color: var(--secondary-green);
-  padding-right: 4rem;
-  padding-left: 4rem;
+  padding: 2rem 3rem 2rem 3rem;
   display: flex;
   flex-direction: column;
   row-gap: 1rem;

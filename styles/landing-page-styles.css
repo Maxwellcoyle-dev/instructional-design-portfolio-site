@@ -9,10 +9,10 @@
 
 
 .landing-page-hero-section {
-  padding: 4rem;
+  padding: 6rem 4rem 4rem 4rem;
   display: flex;
   flex-direction: row;
-  height: 100vh;
+  height: auto;
 }
 
 
@@ -371,7 +371,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 3rem;
+  padding: 3rem;
 }
 
 .back-to-course-img-div img {
@@ -647,6 +647,14 @@
   }
 
   .work-history-section 
+  {
+    display: none;
+  }
+  .back-to-course-img-div
+  {
+    display: none;
+  }
+  #landing-bottom-trigger
   {
     display: none;
   }

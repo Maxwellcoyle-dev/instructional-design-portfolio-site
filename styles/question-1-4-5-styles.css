@@ -72,9 +72,9 @@ button:hover {
   display: grid;
   grid-template-columns: 1.2fr .8fr;
   margin: 0rem 4rem;
-  height: 100vh;
+  height: 100%;
   justify-content: center;
-  padding-bottom: 6rem;
+  padding: 6rem 0 6rem 0;
 }
 
 .content-side-div {
@@ -269,13 +269,13 @@ align-items: center;
   grid-column: 1/2;
   display: flex;
   flex-direction: column;
+  padding-bottom: 1rem;
 }
 
 /* Style the buttons that are used to open the tab content */
 .tab button {
   float: left;
-  width: 8rem;
-  margin-bottom: 2rem;
+  margin: auto;
 }
 
 
@@ -454,4 +454,145 @@ align-items: center;
   height: auto;
 }
 
-/* QUESTION 4 NEXT QUESTION IMAGE DIV */
+
+@media (max-width: 600px) {
+  .question-main-container
+  {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    height: auto;
+    padding: 5rem 1rem 9rem 1rem;
+    margin: 0;
+    }
+    .question-image-div .question-image
+  {
+    width: 70%;
+  }
+
+  .sticky-next-button 
+  {
+    position: sticky;
+    top: 4.5rem;
+    left: 100%;
+    width: 100%;
+    z-index: 10001;
+  }
+
+
+  .grid-main-container
+  {
+    padding: 2rem 1rem;
+    background-color: white;
+  }
+
+  .results-column-container 
+  {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0;
+    width: 100%;
+  }
+  .results-column-container h2 
+  {
+    display: none;
+  }
+
+  .grid-content 
+  {
+    text-align: center;
+  }
+  .results-r2-c2 
+  {
+    width: 80%;
+  }
+
+  .learning-section-header
+  {
+    margin: auto;
+    padding: 3rem 1rem 0 1rem;
+    width: 80%;
+    text-align: center;
+    color: var(--primary-red);
+  }
+
+  .learning-section
+  {
+    flex-direction: column;
+    row-gap: 1rem;
+    padding: 3rem 1.5rem;
+    border-radius: 1rem;
+    margin: 1rem 1rem 4rem 1rem;
+    background-color: var(--secondary-yellow);
+  }
+  .tab
+  {
+    flex-direction: row;
+    width: 100%;
+  }
+  .tab button
+  {
+    background-color: var(--secondary-green);
+  }
+
+
+  #tip-content
+  {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  #tip-content a 
+  {
+    color: var(--primary-green);
+  }
+  #tip-content img 
+  {
+    width: 80%;
+    padding: 1.5rem 0;
+    margin: auto;
+  }
+  #tip-content p
+  {
+    font-weight: 500;
+  }
+  .tabcontent
+  {
+    width: 100%;
+  }
+
+  #tip-content p
+  {
+    padding: 0;
+    padding-bottom: 1rem;
+  }
+
+
+  #video-content 
+  {
+    width: 100%;
+    padding: 0;
+  }
+
+  #video-content iframe 
+  {
+    width: 100%;
+    height: auto;
+  }
+
+  .next-question-div
+  {
+    background-color: transparent;
+  }
+  .next-question-div h2
+  { 
+    display: none;
+  }
+
+  .next-question-div img 
+  {
+    display: none;
+  }
+
+}

@@ -163,10 +163,10 @@
   grid-column: 1/2;
 }
 
-.full-width-section-button-div {
+/* .full-width-section-button-div {
   grid-column: 1/2;
   margin-top: 1rem;
-}
+} */
 
 
 .full-width-section-image-div {
@@ -339,4 +339,148 @@
 
 .card-two {
   background-color: var(--secondary-red);
+}
+
+
+
+@media (max-width: 600px) {
+  .hero-section
+  {
+    width: 100%;
+    padding: 6rem 1rem 3rem 1rem; 
+  }
+  .hero-section h1
+  {
+    text-align: center;
+  }
+  .hero-section h4
+  {
+    text-align: center;
+    width: 100%;
+  }
+  .hero-section p 
+  {
+    width: 100%;
+    margin-left: 1rem;
+    padding-top: 1rem;
+  }
+  .hero-section ul 
+  {
+    margin-left: 1rem;
+  }
+
+  .next-steps-landing-page-div
+  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: .75rem;
+    padding-top: 1rem;
+  }
+
+  .landing-hero-image-div
+  {
+    display: none;
+  }
+
+
+  .course-info-div-one
+  {
+    grid-template-columns: 1fr;
+    align-items: flex-start;
+    row-gap: 1rem;
+    width: 100%;
+    padding: 0;
+    background-color: var(--secondary-green);
+    padding: 1.5rem;
+  }
+  .course-info-div-one h2 
+  {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    text-align: start;
+  }
+  .CID-column-1
+  {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+  .CID-column-2
+  {
+    grid-column: 1 / 2;
+    padding: 0;
+    border-radius: none;
+    box-shadow: none;
+    transition: none;
+    width: 100%;
+  }
+  .CID-column-2 h3 
+  {
+    font-size: 1rem;
+    color: black;
+  }
+  .CID-column-3 
+  {
+    grid-row: 2 / 3;
+  }
+  .CID-column-3 img 
+  {
+    width: 75%;
+    padding: 1rem 0;
+  }
+
+
+  .full-width-info-section-container
+  {
+    width: 100%;
+    height: auto;
+    padding: 1rem 1rem 8rem 1rem;
+    margin: 0;
+    grid-template-columns: 1fr;
+    row-gap: 1rem;
+    column-gap: 0;
+  }
+
+  .full-width-info-section-container h1 
+  {
+    margin: 0;
+    padding: 0;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    text-align: center;
+    width: 100%;
+  }
+  .full-width-info-section-container h4
+  {
+    text-align: center;
+    width: 80%;
+    margin: auto;
+  }
+
+  .full-width-section-image-div 
+  {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    padding-top: 1rem;
+    margin: auto;
+  }
+  .full-width-section-image-div img 
+  {
+    width: 70%;
+    margin: auto;
+  }
+
+  .full-width-info-section-container p 
+  {
+    padding-top: 1rem;
+    text-align: center;
+  }
+
+
+
+  .slideshow-container
+  {
+    display: none;
+  }
+
 }

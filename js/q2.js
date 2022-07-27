@@ -2,7 +2,7 @@
 /* Zoom functionality (uses medium zoom cdm) */
 
 mediumZoom('.zoom', {
-  margin: 50,
+  margin: 10,
   background: "#007A78",
   scrollOffset: 100
 })
@@ -62,7 +62,7 @@ question2A.addEventListener('click', option2A = () => {
   question2A.style.pointerEvents = 'none';
   question2A.style.backgroundColor = '#007A78';
   question2A.style.color = '#FDFCDC';
-  document.getElementById('q2-main-container').style.marginTop = '4rem';
+
 
   choiceA = true;
 
@@ -78,7 +78,6 @@ question2B.addEventListener('click', option2B = () =>{
   question2B.style.color = '#FDFCDC';
   Feedback2B.style.display = 'block';
   question2B.style.pointerEvents = 'none';
-  document.getElementById('q2-main-container').style.marginTop = '4rem';
   choiceB = true;
 
   question2A.style.pointerEvents = 'none';
@@ -93,7 +92,6 @@ question2C.addEventListener('click', option2C = () =>{
   question2C.style.color = '#FDFCDC';
   Feedback2C.style.display = 'block';
   question2C.style.pointerEvents = 'none';
-  document.getElementById('q2-main-container').style.marginTop = '4rem';
 
   choiceC = true;
   
@@ -109,7 +107,6 @@ question2D.addEventListener('click', option2D = () =>{
   question2D.style.color = '#FDFCDC';
   Feedback2D.style.display = 'block';
   question2D.style.pointerEvents = 'none';
-  document.getElementById('q2-main-container').style.marginTop = '4rem';
 
   choiceD = true;
   

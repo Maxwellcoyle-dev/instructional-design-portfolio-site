@@ -8,6 +8,7 @@
 
 .page-container {
   position: relative;
+  min-height: 100vh;
   width: 100%;
 }
 
@@ -15,15 +16,15 @@
   position: absolute;
   bottom: 0;
   background-color: var(--primary-green);
-  height: 2rem;
+  height: 4rem;
   width: 100%;
-  margin-top: 1rem;
 }
 
 .connect-content {
   width: 50%;
   height: 100%;
   margin: auto;
+  padding: 1rem 0 1rem 0; 
   display: flex;
   flex-direction: row;
   column-gap: 2rem;
@@ -57,9 +58,11 @@
 
 
 @media (max-width: 600px) {
-   .footer-div 
+  .footer-div 
    {
-    height: auto;
+    height: 4rem;
+    position: relative;
+    bottom: 0;
    }
   .connect
   {
