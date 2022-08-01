@@ -89,17 +89,10 @@
 
 /* IFRAME STYLES */
 
-.iframe-div {
-  grid-column: 2 / 3;
-  grid-row: 2 / 3;
-  width: 100%;
-  height: auto;
-  justify-self: center;
-}
 
 .course-iframe {
   aspect-ratio: 16 / 9;
-  width: auto;
+  width: 100%;
   height: auto;
 }
 
