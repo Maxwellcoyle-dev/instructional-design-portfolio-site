@@ -6,18 +6,18 @@
   --secondary-red:#FFE1DD;
 }
 
-.page-container {
-  height: 100vh;
-  position: relative;
-}
 
 .project-container {
+  width: 80%;
   display: grid;
-  grid-template-columns: 1fr 2.5fr;
-  margin: 5rem 3rem 0rem 4rem; 
-  column-gap: 1rem;
-  row-gap: 2rem;
-  align-items: flex-start;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 6rem 3rem 0rem 4rem; 
+  padding-bottom: 8rem;
+  column-gap: 2rem;
+  row-gap: .5rem;
+  margin: auto;
+  justify-content: center;
+  text-align: center;
 }
 
 .project-container h1 {
@@ -26,68 +26,60 @@
   color: var(--primary-red);
 }
 
-
-/* SCROLLING BLOB DIV STYLES */
-.info-blob-scrolling-div {
-  grid-column: 1 / 2;
-  grid-row: 2 / 3;
-  height: 25rem;
+.iframe-div {
   width: 100%;
-  overflow: auto;
+  height: auto;
+  padding-bottom: 1rem;
+  margin: auto;
 }
 
-.info-blob-scrolling-div::-webkit-scrollbar {
-  width: .5rem;
+.project-container div:nth-child(2) {
+  grid-column: 1 / 4;
+  grid-row: 2 / 3;
 }
 
-.info-blob-scrolling-div::-webkit-scrollbar-track {
-  background: var(--secondary-green);
-  border-radius: .5rem;
+.project-container div:nth-child(3) {
+  grid-column: 1 / 4;
+  grid-row: 3 / 4;
 }
 
-.info-blob-scrolling-div::-webkit-scrollbar-thumb {
-  background: var(--primary-green);
-  border-radius: .5rem;
+.project-container div:nth-child(4) {
+  grid-column: 1 / 3;
+  grid-row: 4 / 5;
 }
+
+.project-container div:nth-child(5) {
+  grid-column: 3 / 4;
+  grid-row: 4 / 5;
+}
+
+
+
+
 
 /* BLOB COLOR STYLES */
 
-.blob-text-div-red {
+.info-blob {
   background-color: var(--secondary-red);
   padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  margin-right: 1rem;
   border-radius: .5rem;
-}
-
-.blob-text-div-yellow {
-  background-color: var(--secondary-yellow);
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  margin-right: 1rem;
-  border-radius: .5rem;
-}
-
-.blob-text-div-green {
-  background-color: var(--secondary-green);
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  margin-right: 1rem;
-  border-radius: .5rem;
-}
-
-/* BLOB HOVER EFFECTS */
-.blob-div-effects {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s; 
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: left;
+  margin: 1rem;
 }
 
-.blob-div-effects:hover {
+.info-blob:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
 
+
 /* IFRAME STYLES */
+
 
 
 .course-iframe {
@@ -95,7 +87,6 @@
   width: 100%;
   height: auto;
 }
-
 
 @media (max-width: 600px) {
   .project-container
