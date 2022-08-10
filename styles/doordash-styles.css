@@ -13,10 +13,17 @@
   display: flex;
   height: 100vh;
   align-items: center;
+  width: 80%;
+  justify-content: center;
+  margin: auto;
 }
 
 .hero-div h1 {
-  color: #502e3c;
+  color: #eb1700;
+}
+
+.hero-div h3 {
+  width: 100%;
 }
 
 .hero-div {
@@ -34,9 +41,9 @@
   padding-left: 1rem;
 }
 
-.toc-div h4 {
+/* .toc-div h4 {
   padding-bottom: 1rem;
-}
+} */
 
 .toc-div ul {
   list-style: none;
@@ -45,8 +52,8 @@
 }
 
 a {
-  color: #502e3c;
-  text-decoration: underline;
+  color: #eb1700;
+  font-weight: 600;
 }
 
 .padding-div {
@@ -76,7 +83,16 @@ a {
 
 .content-div h3 {
   text-align: center;
+  padding-bottom: 1rem;
+  color: #eb1700;
 }
+
+.content-div p {
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+
 .content-div h4 {
   text-align: center;
   padding: 1rem;
@@ -97,6 +113,19 @@ a {
 
 
 .image-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.image-div a {
+  margin: auto;
+  width: 50%;
+}
+
+.image-div img {
+  width: 100%;
   margin: auto;
 }
 
