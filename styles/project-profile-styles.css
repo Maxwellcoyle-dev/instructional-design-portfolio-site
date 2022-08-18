@@ -22,6 +22,7 @@
 
 .project-container h1 {
   color: var(--primary-red);
+  padding-bottom: 2rem;
 }
 
 .iframe-div {
@@ -102,6 +103,16 @@
 
   .blob-container {
     width: 95%;
+  }
+
+  .info-blob
+  {
+    padding: 1.5rem 1rem;
+  }
+
+  .info-blob h4 
+  {
+    padding-top: .5rem;
   }
 
   .iframe-div
