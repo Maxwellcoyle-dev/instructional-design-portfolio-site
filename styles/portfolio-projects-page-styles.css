@@ -83,6 +83,9 @@
   opacity: 1;
 }
 
+.see-course-button {
+  display: none;
+}
 
 
 
@@ -114,72 +117,37 @@
     width: 100%;
     padding: 6rem 0 2rem 0;
   }
-  .projects-hero-column-left
+  .projects-hero-section h1
   {
-    width: 100%;
-    align-items: center;
-    padding: 0 1rem 0 1rem;
-    margin-bottom: 1rem;
-    padding-bottom: 2rem;
     text-align: center;
-    row-gap: .5rem;
-  }
-  #project-page-down-trigger
-  {
-    width: 100%;
-    text-align: center;
-    padding: 0;
   }
 
-
-  .projects-hero-column-right 
-  {
-    padding: 2rem 1rem;
-    width: 100%;
-  }
-  .column-right-row-2
-  {
-    display: none;
-  }
-  .column-right-row-3
-  {
-    display: none;
-  }
-
-
-  .project-section-green
-  {
-    grid-template-columns: 1fr;
-    width: 90%;
-    padding: 1rem 0;
-    margin: auto;
-  }
-  .project-section-green .project-card-hero
-  {
-    grid-row: 1 / 2;
-  }
-  .project-section-green .project-card-info
-  {
-    grid-row: 2 / 3;
-  }
-
-  .project-section-red
+  .project-card-container
   {
     display: flex;
     flex-direction: column;
-    width: 90%;
+    width: 100%;
+  }
+  .project-card
+  {
+    width: 97%;
+    margin: auto;
   }
 
-  .desktop-view-course-btn
+  .project-card h2 
   {
-    display: none;
+    text-align: center;
   }
-  .mobile-view-course-btn 
+
+  .see-course-button 
   {
     display: block;
-    padding-top: 2rem;
+    width: 95%;
+    margin: auto;
   }
 
+
+  
 
 }
 
