@@ -1,2 +1,1 @@
-# portfolio-site
-This is my portfolio website repository.
+# Instructional Design Portfolio Site built using vanillla JS, HTML, and CSS. 
